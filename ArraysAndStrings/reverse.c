@@ -2,21 +2,19 @@
 #include <stdlib.h>
 
 void reverse(char* str) {
-    if (str != NULL) {
-        char* start = str;
+    if (str) {
         char* end = str;
-        while(*end != '\0') {
+        while(*end) {
             end++;
         }
 
         end--;
 
-        while (end > start) {
-            char tmp = *start;
-            *start = *end;
-            *end = tmp;
-            start++;
-            end--;
+        char tmp;
+        while (end > str) {
+            tmp = *str;
+            *str++ = *end;
+            *end-- = tmp;
         }
     }
 }
