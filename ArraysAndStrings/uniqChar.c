@@ -4,13 +4,14 @@
 
 bool isUniqChars(char* str) {
     bool counter[256] = {false, };
-    while (*str) {
-        if (counter[*str]) {
+    char* ptr = str;
+    while (*ptr) {
+        if (counter[*ptr] || ptr-str > 256) {
             return false;
         } else {
-            counter[*str] = true;
+            counter[*ptr] = true;
         }
-        str++;
+        ptr++;
     }
 
     return true;
